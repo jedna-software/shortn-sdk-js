@@ -3,7 +3,7 @@
 All notable changes to this project are documented in this file. The project follows
 semantic versioning from its first stable release.
 
-## 0.1.0 - Unreleased
+## 0.1.0 - 2026-11-22
 
 First release.
 
