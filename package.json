@@ -1,0 +1,73 @@
+{
+  "name": "@jednasoftware/shortn-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the Shortn Link API.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Jedna Software",
+  "homepage": "https://shortn.link",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedna-software/shortn-sdk-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jedna-software/shortn-sdk-js/issues"
+  },
+  "keywords": [
+    "shortn",
+    "shortn-link",
+    "links",
+    "url-shortener",
+    "analytics",
+    "conversions",
+    "attribution",
+    "typescript"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    ".env.example",
+    "dist",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --exclude test/smoke.test.ts",
+    "test:smoke": "vitest run test/smoke.test.ts",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.10"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
